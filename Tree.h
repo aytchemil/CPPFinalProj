@@ -42,6 +42,9 @@ class Tree : public Plant
         
         virtual void Grow() override;
         virtual void Photosynthesis(unsigned int _glucoseUsed) override;
+
+        friend ostream& operator<<(ostream& o, const Tree& _Tree);
+        friend istream& operator>>(istream& i, Tree& _Tree);
        
 };
 
