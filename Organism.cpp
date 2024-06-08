@@ -115,8 +115,7 @@ ostream& operator<<(ostream& o, const Organism& _Organism)
 
 istream& operator>>(istream& i, Organism& _Organism)
 {
-    bool genDefaultStats = false;
-    
+    cout<<"Inputing Organism: "<<GetName()<<"'s values.."<<endl;
     cout<<"Input Name: "<<endl;
     i >> _Organism.name;
     
@@ -128,6 +127,10 @@ istream& operator>>(istream& i, Organism& _Organism)
             
     cout<<"Input daysAlive: "<<endl;
     i >> _Organism.daysAlive;
+
+    cout<<"Input maxDaysLifeSpan: "<<endl;
+    i >> _Organism.maxDaysLifeSpan;
+  
     
     return i;
 }
