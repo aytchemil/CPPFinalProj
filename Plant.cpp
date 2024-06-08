@@ -141,4 +141,46 @@ void Plant::ExtendRoots(){
     
     roots++;
 }
+
+
+
+ostream& operator<<(ostream& o, const Plant& _Plant)
+{
+    o << "Roots : " <<               _Plant.GetRoots()
+      << "Leaves : " <<             _Plant.GetLeaves()
+      << "Glucose : " <<           _Plant.GetGlucose()
+      << "HasFruit : " <<         _Plant.GetDaysAlive();
+
+    if(_Plant.GetHasFruit())
+        o << " mFruit : " <<     _Plant.GetmFruit() << endl;
+    else
+        o << endl;
+      
+    return o;
+}
+
+istream& operator>>(istream& i, Organism& _Plant)
+{
+    cout<<"Inputing Organism: "<<GetName()<<"'s values.."<<endl;
+    cout<<"-----------------------------------------------------"<<endl;
+    cout<<"Input Roots: "<<endl;
+    i >> _Plant.roots;
+    
+    cout<<"Input Leaves: "<<endl;
+    i >> _Plant.leaves;
+            
+    cout<<"Input Glucose: "<<endl;
+    i >> _Plant.glucose;
+            
+    cout<<"Input hasFruit: "<<endl;
+    i >> _Plant.hasFruit;
+
+    if(_Plant.GetHasFruit())
+    {
+        cout<<"Input mFruit: "<<endl;
+        i >> _Plant.maxDaysLifeSpan;
+    }
+    
+    return i;
+}
     
