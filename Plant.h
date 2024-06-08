@@ -38,9 +38,12 @@ class Plant : public Organism
         void Respire() override;
         void Grow() override;
         void Die() override;
+
         virtual void Photosynthesis(unsigned int _glucoseUsed);
         void ExtendRoots();
-        
+
+        friend ostream& operator<<(ostream& o, const Plant& _Plant);
+        friend istream& operator>>(istream& i, Plant& _Plant);
 };
 
 #endif /* PLANT_H */
